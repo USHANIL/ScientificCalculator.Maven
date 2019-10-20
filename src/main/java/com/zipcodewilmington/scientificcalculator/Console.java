@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import com.sun.tools.javac.util.Convert;
+
 import java.util.Scanner;
 
 /**
@@ -22,11 +24,19 @@ public class Console {
         return userInput;
     }
 
-    public static Integer getIntegerInput(String prompt) {
-        return null;
+    public static Integer getIntegerInput(String prompt)
+    {
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Integer userInput = scanner.nextInt();
+        return userInput;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        print(prompt);
+        Double userInput = scanner.nextDouble();
+        return userInput;
     }
+
 }
