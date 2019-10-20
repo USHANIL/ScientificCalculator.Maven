@@ -7,19 +7,13 @@ public class MainApplication {
     public static void main(String[] args)
     {
         Console.println("Welcome to my calculator!");
-        String operation = Console.getStringInput("\n Select A (ADD) S (Subtract) M (Multiply) D (Divide) I (Invert Sign) i (Inverse) \n");
+        String operation =
+                Console.getStringInput("\n Select A (ADD) S (Subtract) " +
+                        "M (Multiply) D (Divide) I (Invert Sign) i (Inverse) " +
+                        "s (Square Root) 2 (Square) \n");
         char operator = operation.charAt(0);
         operatorSelect(operator);
 
-        /*
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
-
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
-
-         */
     }
 
     public static void operatorSelect(char operator)
@@ -52,6 +46,7 @@ public class MainApplication {
                 {
                     System.out.println("\n Error: You cannot divide by 0");
                 }
+                break;
             case 'I':
                 cal.getOneNumber();
                 System.out.println( " \n Invert Sign of " + cal.firstNumber + " is " + cal.invertSign(cal.firstNumber)   );
@@ -59,6 +54,14 @@ public class MainApplication {
             case 'i':
                 cal.getOneNumber();
                 System.out.println( " \n Inverse  of " + cal.firstNumber + " is " + cal.inverse(cal.firstNumber)   );
+                break;
+            case 's':
+                cal.getOneNumber();
+                System.out.println( " \n Square Root  of " + cal.firstNumber + " is " + cal.sqrt(cal.firstNumber)   );
+                break;
+            case '2':
+                cal.getOneNumber();
+                System.out.println( " \n Square  of " + cal.firstNumber + " is " + cal.square(cal.firstNumber)   );
                 break;
             default:
                 System.out.println("\n Please select a valid character");
